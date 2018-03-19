@@ -58,38 +58,29 @@ export default class AuthForm extends React.Component {
         { 
           !this.state.user_type? undefined
             : this.state.user_type === 'Grower' ? 
-              <React.Fragment>
-                <label for='user_type_id'>Grower ID:</label>
+              <input
+                type='text'
+                name='user_type_id'
+                value={this.state.user_type_id}
+                onChange={this.handleChange}
+                placeholder={`Insert ${this.state.user_type} ID`}
+              />
+              : this.state.user_type === 'Distributor' ?
                 <input
                   type='text'
                   name='user_type_id'
                   value={this.state.user_type_id}
                   onChange={this.handleChange}
-                  placeholder={`${this.state.user_type} ID`}
+                  placeholder={`Insert ${this.state.user_type} ID`}
                 />
-              </React.Fragment>
-              : this.state.user_type === 'Distributor' ?
-                <React.Fragment>
-                  <label for='user_type_id'>Distributor ID:</label>
+                : this.state.user_type === 'Dispensery' ? 
                   <input
                     type='text'
                     name='user_type_id'
                     value={this.state.user_type_id}
                     onChange={this.handleChange}
-                    placeholder='Insert ID'
+                    placeholder={`Insert ${this.state.user_type} ID`}
                   />
-                </React.Fragment>
-                : this.state.user_type === 'Dispensery' ? 
-                  <React.Fragment>
-                    <label for='user_type_id'>Dispensery ID:</label>
-                    <input
-                      type='text'
-                      name='user_type_id'
-                      value={this.state.user_type_id}
-                      onChange={this.handleChange}
-                      placeholder='Insert ID'
-                    />
-                  </React.Fragment>
                   : undefined
         }
         <button type='submit'></button>
