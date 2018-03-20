@@ -1,5 +1,6 @@
 import React from 'react';
-import View from './view';
+import BlockChainView from './view';
+import Inventory from './inventory';
 import Landing from './landing';
 import Transactions from './transactions';
 import { Provider } from 'react-redux';
@@ -23,12 +24,13 @@ export default class App extends React.Component {
           <BrowserRouter>
             <React.Fragment>
               <Route exact path='/registration/:auth' component={Landing}/>
-              {/* <Route exact path='/view/:type' component={View}/> */}
+              <Route exact path='/view/:type' component={BlockChainView}/>
               <Route exact path='/transactions' component={()=>
                 token
                   ? <Transactions token={token} user_type={user_type}/>
                   : <Redirect to ='/registration/signup'/> 
               } />
+              <Route exact path='/inventory' component={Inventory} />
             </React.Fragment>
           </BrowserRouter>
         </Provider>
