@@ -30,7 +30,7 @@ export default class AuthForm extends React.Component {
   }
 
   handleOption (e) {
-    document.getElementById('custom-type-options').style.visibility = 'invisible';
+    document.getElementById('custom-type-options').style.visibility = 'none';
     this.setState({user_type: e.target.innerText});
   }
 
