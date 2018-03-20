@@ -3,12 +3,13 @@ import React from 'react';
 export default class AuthForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
+    this.defaultState = {
       username: '',
       password: '',
       user_type: '',
       user_type_id: '',
     };
+    this.state = {...this.defaultState};
     Object.getOwnPropertyNames(AuthForm.prototype).filter(n => n.startsWith('handle')).map(m => this[m] = this[m].bind(this));
 
   }
@@ -20,6 +21,7 @@ export default class AuthForm extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     this.props.onComplete(this.state);
+    this.setState({...this.defaultState});
   }
 
   handleSelect () {
@@ -47,16 +49,16 @@ export default class AuthForm extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
           placeholder='Password'/>
-        <div id='cutsom-type-select'>
+        { this.props.auth === 'signup'? <div id='cutsom-type-select'>
           <p onClick={this.handleSelect}>{this.state.user_type}</p>
           <ul id='custom-type-options' onClick={this.handleOption}>
             <li>Grower</li>
             <li>Distributor</li>
-            <li>Dispensery</li>
+            <li>Retailer</li>
           </ul>
-        </div>
-        { 
-          !this.state.user_type? undefined
+        </div> : undefined }
+        { this.props.auth === 'signup'?
+          (!this.state.user_type? undefined
             : this.state.user_type === 'Grower' ? 
               <input
                 type='text'
@@ -73,7 +75,7 @@ export default class AuthForm extends React.Component {
                   onChange={this.handleChange}
                   placeholder={`Insert ${this.state.user_type} ID`}
                 />
-                : this.state.user_type === 'Dispensery' ? 
+                : this.state.user_type === 'Retailer' ? 
                   <input
                     type='text'
                     name='user_type_id'
@@ -81,9 +83,9 @@ export default class AuthForm extends React.Component {
                     onChange={this.handleChange}
                     placeholder={`Insert ${this.state.user_type} ID`}
                   />
-                  : undefined
+                  : undefined) : undefined
         }
-        <button type='submit'></button>
+        <button type='submit'>{this.props.auth}</button>
       </form>
     );
   }

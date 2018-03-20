@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import NavBar from '../navbar';
 import AuthForm from './auth-form';
 import {signupRequest, signinRequest} from '../../action/auth-actions';
 
@@ -11,6 +12,7 @@ class Landing extends React.Component {
       : this.props.signup;
     return(
       <div className='landing-container'>
+        <NavBar currentPage={params.auth}/>
         <AuthForm
           auth={params.auth}
           onComplete={onComplete}/>
