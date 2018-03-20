@@ -52,7 +52,7 @@ export default class AuthForm extends React.Component {
           <ul id='custom-type-options' onClick={this.handleOption}>
             <li>Grower</li>
             <li>Distributor</li>
-            <li>Dispensery</li>
+            <li>Dispensary</li>
           </ul>
         </div>
         { 
@@ -73,7 +73,7 @@ export default class AuthForm extends React.Component {
                   onChange={this.handleChange}
                   placeholder={`Insert ${this.state.user_type} ID`}
                 />
-                : this.state.user_type === 'Dispensery' ? 
+                : this.state.user_type === 'Dispensary' ? 
                   <input
                     type='text'
                     name='user_type_id'
