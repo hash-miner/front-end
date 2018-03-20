@@ -9,15 +9,19 @@ export default class AuthForm extends React.Component {
         location: '',
         batchId: '',
         plantName:'',
+        distributorId:'',
       }
       : this.props.user_type === 'Distributor' ? 
         {
-          itemId: '',
+          batchId: '',
           itemWeight: '',
+          quantity: '',
           packaging:'',
+          retailerId:'',
         }
-        : {
-          
+        :
+        {
+          itemId:'',
         };
     Object.getOwnPropertyNames(AuthForm.prototype)
       .filter(n => n.startsWith('handle'))
