@@ -61,12 +61,12 @@ export default class AuthForm extends React.Component {
               placeholder={'Insert Plant Name'}
             />
             <input
-              type='text'
-              name='batchName'
-              value={this.state.batchName}
+              type='number'
+              name='batchWeight'
+              value={this.state.batchWeight}
               onChange={this.handleChange}
-              placeholder={'Insert Batch Name'}
             />
+            <label htmlFor='batchWeight'>kg</label>
             <input
               type='text'
               name='distributorId'
@@ -116,10 +116,10 @@ export default class AuthForm extends React.Component {
               <React.Fragment>
                 <input
                   type='text'
-                  name='user_type_id'
-                  value={this.state.user_type_id}
+                  name='itemId'
+                  value={this.state.itemId}
                   onChange={this.handleChange}
-                  placeholder={'Insert User Type'}
+                  placeholder={'Insert Item ID'}
                 />
               </React.Fragment>
 
