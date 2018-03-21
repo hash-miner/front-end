@@ -5,6 +5,7 @@ export default class NavBar extends React.Component {
   render() {
     return(
       <nav>
+        <h1 className="main-header">Hash Mining Hodl Company, LLC</h1>
         <ul className='nav-list'>
           {/* {this.props.currentPage !== 'pretty-view'? <li><Link to='/view/formatted'>Formatted View</Link></li> : undefined}
           {this.props.currentPage !== 'raw-view'? <li><Link to='/view/unformatted'>Unformatted View</Link></li> : undefined} */}

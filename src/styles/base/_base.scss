@@ -1,0 +1,66 @@
+body {
+  height: 1000px;
+  margin: 20px 60px 60px 60px;
+  font-size: 18px;
+  background-image: url("../assets/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+nav {
+  background-color: #efae09;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #266ba8;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.float-right {
+  float: right;
+}
+
+li a:hover {
+  background-color: #888;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+label {
+  padding: 10px;
+}
+
+button {
+  background-color: #266ba8;
+  color: #fff;
+  padding: 5px 12px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 12px;
+  margin: 10px;
+}
+
+.main-header {
+  text-align: center;
+  color: #266ba8;
+}
