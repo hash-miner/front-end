@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import NavBar from '../navbar';
-import FormattedChain from './pretty-block';
-import UnformattedChain from './raw-block';
+import FormattedChain from './formatted-block';
+import UnformattedChain from './unformatted-block';
 import { signupRequest, signinRequest } from '../../action/auth-actions';
 
 class BlockChainView extends React.Component {

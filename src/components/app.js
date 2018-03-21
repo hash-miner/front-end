@@ -18,6 +18,7 @@ export default class App extends React.Component {
 
   render() {
     let {token, user_type} = store.getState();
+    console.log(store.getState())
     return (
       <main className='application-main'>
         <Provider store={store}>

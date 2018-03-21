@@ -34,6 +34,7 @@ export const signinRequest = user => dispatch => {
   return superagent.get(`${__MAIN_URL__}/signin`)
     .auth(user.username, user.password)
     .then(res => {
+      console.log(res.body)
       dispatch(tokenSet(res.body.token));
       dispatch(userTypeSet(res.body.user_type));
       try {

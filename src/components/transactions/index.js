@@ -3,6 +3,7 @@ import NavBar from '../navbar';
 import {tokenDelete} from '../../action/auth-actions';
 import {transactionSendRequest} from '../../action/block-actions';
 import {connect} from 'react-redux';
+import BlockForm from './block-form';
 
 class Transactions extends React.Component {
   render(){
