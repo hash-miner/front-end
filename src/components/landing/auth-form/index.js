@@ -22,6 +22,7 @@ export default class AuthForm extends React.Component {
     e.preventDefault();
     this.props.onComplete(this.state);
     this.setState({...this.defaultState});
+    this.props.history.push('/inventory');
   }
 
   handleSelect () {

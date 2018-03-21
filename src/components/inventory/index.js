@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import NavBar from '../navbar';
 import { inventoryGetRequest } from '../../action/inventory-actions';
 
-class BlockChainView extends React.Component {
+class Inventory extends React.Component {
   constructor(props) {
     super(props);
     this.defaultState = {
@@ -25,7 +25,7 @@ class BlockChainView extends React.Component {
   render() {
     return (
       <div className='inventory-view-container'>
-        <NavBar currentPage='inventory' />
+        <NavBar token={this.props.token} currentPage='inventory' />
         <form className='inventory-form' onSubmit={this.handleSubmit}>
           <input 
             type='text'
@@ -51,10 +51,11 @@ class BlockChainView extends React.Component {
 
 let mapStateToProps = state => ({
   inventory: state.inventory,
+  token: state.token,
 });
 let mapDispatchToProps = dispatch => ({
   inventorySearch: (search) => dispatch(inventoryGetRequest(search)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BlockChainView);
+export default connect(mapStateToProps, mapDispatchToProps)(Inventory);
 
