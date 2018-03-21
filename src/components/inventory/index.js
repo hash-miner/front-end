@@ -7,7 +7,12 @@ class Inventory extends React.Component {
   constructor(props) {
     super(props);
     this.defaultState = {
-      search_string: '',
+      doNotSell: '',
+      batchId: '',
+      itemId: '',
+      distributor: '',
+      grower: '',
+      retailer: '',
     };
     this.state = {...this.defaultState};
 
@@ -21,8 +26,7 @@ class Inventory extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault();
-    let search = this.state.search_string.replace(' ', '_');
-    this.props.inventorySearch(search);
+    this.props.inventorySearch(this.state);
     this.setState({...this.defaultState});
   }
   render() {
@@ -31,12 +35,47 @@ class Inventory extends React.Component {
         <NavBar token={this.props.token} currentPage='inventory' />
         <h2>Inventory Search</h2>
         <form className='inventory-form' onSubmit={this.handleSubmit}>
+          <label>Do not sell</label>
+          <input 
+            type='checkbox'
+            name='doNotSell'
+            value={this.state.doNotSell}
+            onChange={this.handleChange}
+          />
           <input 
             type='text'
-            name='search_string'
-            value={this.state.search_string}
+            name='batchId'
+            value={this.state.batchId}
             onChange={this.handleChange}
-            placeholder='Batch #1234 + Grower #1234'
+            placeholder='batch id'
+          />
+          <input 
+            type='text'
+            name='itemId'
+            value={this.state.itemId}
+            onChange={this.handleChange}
+            placeholder='item id'
+          />
+          <input 
+            type='text'
+            name='distributor'
+            value={this.state.distributor}
+            onChange={this.handleChange}
+            placeholder='distributor'
+          />
+          <input 
+            type='text'
+            name='grower'
+            value={this.state.grower}
+            onChange={this.handleChange}
+            placeholder='grower'
+          />
+          <input 
+            type='text'
+            name='retailer'
+            value={this.state.retailer}
+            onChange={this.handleChange}
+            placeholder='retailer'
           />
           <button type='submit'>Search</button>
         </form>
