@@ -5,8 +5,10 @@ export const setInventory = inventory => ({
   payload: inventory,
 });
 
-export const inventoryGetRequest = (search) => dispatch => {
-  return superagent.get(`${__NODE_URL__}/inventory/${search}`)
+export const inventoryGetRequest = (state) => dispatch => {
+  let param = '';
+  for (let key in state) if (state[key]) param ? param += `+${key}#${state[key]}` : param = `${key}#${state[key]}`;
+  return superagent.get(`${__NODE_URL__}/inventory/${param}`)
     .then(res => {
       dispatch(setInventory(res.body));
     });
