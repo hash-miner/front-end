@@ -35,13 +35,13 @@ class Inventory extends React.Component {
         <NavBar token={this.props.token} currentPage='inventory' />
         <h2>Inventory Search</h2>
         <form className='inventory-form' onSubmit={this.handleSubmit}>
-          <label>Do not sell</label>
-          <input 
+          {/* <label>Do not sell</label> */}
+          {/* <input 
             type='checkbox'
             name='doNotSell'
             value={this.state.doNotSell}
             onChange={this.handleChange}
-          />
+          /> */}
           <input 
             type='text'
             name='batchId'
