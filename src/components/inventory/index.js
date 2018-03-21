@@ -10,6 +10,9 @@ class Inventory extends React.Component {
       search_string: '',
     };
     this.state = {...this.defaultState};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange (e) {
