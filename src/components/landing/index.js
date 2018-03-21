@@ -12,8 +12,9 @@ class Landing extends React.Component {
       : this.props.signup;
     return(
       <div className='landing-container'>
-        <NavBar currentPage={params.auth}/>
+        <NavBar token={this.props.token} currentPage={params.auth}/>
         <AuthForm
+          history={this.props.history}
           auth={params.auth}
           onComplete={onComplete}/>
       </div>
@@ -21,7 +22,9 @@ class Landing extends React.Component {
   }
 }
 
-let mapStateToProps = () => ({});
+let mapStateToProps = state => ({
+  token: state.token,
+});
 let mapDispatchToProps = dispatch => ({
   signup: user => dispatch(signupRequest(user)),
   signin: user => dispatch(signinRequest(user)),

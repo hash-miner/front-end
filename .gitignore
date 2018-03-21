@@ -102,7 +102,7 @@ typings/
 
 # dotenv environment variables file
 .env
-
+.dev.env
 
 ### OSX ###
 

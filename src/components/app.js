@@ -18,18 +18,23 @@ export default class App extends React.Component {
 
   render() {
     let {token, user_type} = store.getState();
-    console.log(store.getState())
+    console.log(store.getState());
     return (
       <main className='application-main'>
         <Provider store={store}>
           <BrowserRouter>
             <React.Fragment>
+              <Route exact path='/' component={() => 
+                token
+                  ? <Redirect to='/transactions'/>
+                  : <Redirect to='/registration/signup'/>
+              }/>
               <Route exact path='/registration/:auth' component={Landing}/>
               <Route exact path='/view/:type' component={BlockChainView}/>
               <Route exact path='/transactions' component={()=>
                 token
                   ? <Transactions token={token} user_type={user_type}/>
-                  : <Redirect to ='/registration/signup'/> 
+                  : <Redirect to='/registration/signup'/> 
               } />
               <Route exact path='/inventory' component={Inventory} />
             </React.Fragment>
