@@ -26,6 +26,7 @@ class Inventory extends React.Component {
     return (
       <div className='inventory-view-container'>
         <NavBar token={this.props.token} currentPage='inventory' />
+        <h2>Inventory Search</h2>
         <form className='inventory-form' onSubmit={this.handleSubmit}>
           <input 
             type='text'
@@ -58,4 +59,3 @@ let mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Inventory);
-
