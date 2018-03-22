@@ -46,7 +46,7 @@ class SearchResults extends React.Component {
       },
       gridTile: {
         border: '#174266',
-        fontFamily: 'Roboto, sans-serif',
+        fontFamily: 'Pontano Sans, sans-serif',
       },
     };
     return (
@@ -84,7 +84,7 @@ class SearchResults extends React.Component {
                 cols={1}
                 key={transaction.id}
                 title={this.props.transactions.From}
-                style={{ fontFamily: 'Roboto, sans-serif' }}
+                style={{ fontFamily: ', sans-serif' }}
               >
                 <div className='transaction-content'>
                   <ul style={{ listStyle: 'none', display: 'inline-block' }}>
