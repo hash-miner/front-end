@@ -1,33 +1,49 @@
-// #root {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: space-between;
-//   height: 500px;
-//   // background-image: url("../assets/main-bg.png");
-//   // background-repeat: repeat-y;
-//   // background-position: center;
-//   // background-size: cover;
-// }
-
-// .main-header {
-//   text-align: center;
-//   color: #fff;
-// }
-
 .h1 {
   background-image: url("../assets/main-bg.png");
   background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
-  height: 660px;
+  height: 800px;
 }
 
-.h1heading {
-  color: #fff;
-  text-align: center;
+.h2 {
+  background-image: url("../assets/data-flow.png");
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: cover;
+  height: 800px;
+  // background-image: linear-gradient(rgba(lightblue, 0.4), rgba(75, 187, 206, 0.1)),
+  // url("../assets/data-flow.png");
+}
+
+.h1headinga {
   padding-top: 60px;
+  font-size: 20px;
+  color: rgb(75, 187, 206);
+  text-align: center;
 }
 
+.headinghome {
+  color: rgb(75, 187, 206);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.logosize {
+  
+  width: 20em;
+}
+
+.dataflow {
+  background-image: linear-gradient(rgba(lightblue, 0.4), rgba(plum, 0.4)),
+}
 // ul {
 //   list-style-type: none;
 //   margin: 0;
