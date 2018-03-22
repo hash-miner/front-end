@@ -2,7 +2,7 @@ import React from 'react';
 import './search-results.scss';
 import InventoryForm from '../inventory/index';
 import AutoComplete from 'material-ui/AutoComplete';
-import {GridList, GridTile} from 'material-ui/Gridlist';
+import {GridList, GridTile} from 'material-ui';
 import RaisedButton from 'material-ui/RaisedButton/RaisedButton';
 
 class SearchResults extends React.Component {
