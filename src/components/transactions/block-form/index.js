@@ -5,9 +5,11 @@ export default class AuthForm extends React.Component {
     super(props);
     this.defaultState = this.props.user_type === 'Grower' ? 
       {
-        batchWeight: 0, // Numeric Input
-        plantName:'', // String (Text) Input
+        weight: 0, // Numeric Input
+        batchId:'', // String (Text) Input
+        location: '',
         distributorId:'', // String (Text) Input
+        user_type: this.props.user_type,
       }
       : this.props.user_type === 'Distributor' ? 
         {
@@ -16,10 +18,12 @@ export default class AuthForm extends React.Component {
           quantity: 0, // Numeric Input
           packaging:'', // String (Text) Input
           retailerId:'', // String (Text) Input
+          user_type: this.props.user_type,
         }
         :
         {
           itemId:'', // Select Box
+          user_type: this.props.user_type,
         };
     this.state = {...this.defaultState};
     Object.getOwnPropertyNames(AuthForm.prototype)
@@ -55,18 +59,25 @@ export default class AuthForm extends React.Component {
           user_type === 'Grower'? <React.Fragment>
             <input
               type='text'
-              name='plantName'
-              value={this.state.plantName}
+              name='batchId'
+              value={this.state.batchId}
               onChange={this.handleChange}
-              placeholder={'Insert Plant Name'}
+              placeholder={'ins batch id'}
+            />
+            <input
+              type='text'
+              name='location'
+              value={this.state.location}
+              onChange={this.handleChange}
+              placeholder={'ins location'}
             />
             <input
               type='number'
-              name='batchWeight'
-              value={this.state.batchWeight}
+              name='weight'
+              value={this.state.weight}
               onChange={this.handleChange}
             />
-            <label htmlFor='batchWeight'>kg</label>
+            <label htmlFor='weight'>kg</label>
             <input
               type='text'
               name='distributorId'
