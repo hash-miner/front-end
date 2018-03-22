@@ -1,7 +1,12 @@
 import React from 'react';
 import NavBar from '../navbar';
 import Logo from '../../styles/assets/blockchainlogo.png';
+//import Logo from '../../styles/assets/magicLogoMinerHash.gif';
 import DataFlow from '../../styles/assets/data-flow.png';
+import Dan from '../../styles/assets/dan.png';
+import Ed from '../../styles/assets/ed.png';
+import Hector from '../../styles/assets/hector.png';
+import Jesus from '../../styles/assets/jesus.png';
 
 export default class Home extends React.Component {
   render() {
@@ -19,7 +24,8 @@ export default class Home extends React.Component {
         <div className='h2'>
           {/* <p><img className='center dataflow' src={DataFlow}/></p> */}
         </div>
-        <div>   
+        <div className='aboutus'>
+          <p><img className='teamimg' src={Dan}/><img className='teamimg' src={Ed}/><img className='teamimg' src={Hector}/><img className='teamimg' src={Jesus}/></p>
         </div>
       </div>
 
