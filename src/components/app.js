@@ -26,7 +26,7 @@ export default class App extends React.Component {
         display: 'flex',
         flexWrap: 'wrap',
         justifyContent: 'space-around',
-        fontFamily: 'Roboto, sans-serif',
+        fontFamily: 'Pontano Sans, sans-serif',
       },
       appBar: {
         height: '50px',
@@ -35,7 +35,7 @@ export default class App extends React.Component {
       title: {
         color: '#888',
         textAlign: 'center',
-        textSize: '2px;',
+        // textSize: '2px;',
         
       },
 
@@ -50,7 +50,7 @@ export default class App extends React.Component {
         borderRadius: '8px',
         fontColor: '#E7E7E7',
         backgroundColor: 'white',
-        fontFamily: 'Roboto, sans-serif',
+        fontFamily: 'Pontano Sans, sans-serif',
       },
     });
     let {token, user_type} = store.getState();
@@ -61,7 +61,7 @@ export default class App extends React.Component {
           <AppBar
           // style={{height: '130px', marginBottom: '0px', backgroundColor: '#174266'}} 
           // showMenuIconButton={false}/>
-            title='Meet Hash Miner. A decentralized distribution tracking chain'
+            title='Hash Miner'
             titleStyle={styles.title}
             style={styles.appBar}/>
           <Provider store={store}>
