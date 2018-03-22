@@ -10,9 +10,9 @@ class Inventory extends React.Component {
       doNotSell: '',
       batchId: '',
       itemId: '',
-      distributor: '',
-      grower: '',
-      retailer: '',
+      distributorId: '',
+      growerId: '',
+      retailerId: '',
     };
     this.state = {...this.defaultState};
 
@@ -58,22 +58,22 @@ class Inventory extends React.Component {
           />
           <input 
             type='text'
-            name='distributor'
-            value={this.state.distributor}
+            name='distributorId'
+            value={this.state.distributorId}
             onChange={this.handleChange}
             placeholder='distributor'
           />
           <input 
             type='text'
-            name='grower'
-            value={this.state.grower}
+            name='growerId'
+            value={this.state.growerId}
             onChange={this.handleChange}
             placeholder='grower'
           />
           <input 
             type='text'
-            name='retailer'
-            value={this.state.retailer}
+            name='retailerId'
+            value={this.state.retailerId}
             onChange={this.handleChange}
             placeholder='retailer'
           />

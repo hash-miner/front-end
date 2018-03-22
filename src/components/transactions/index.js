@@ -10,7 +10,7 @@ class Transactions extends React.Component {
     return(
       <div className='transactions-container'>
         <NavBar token={this.props.token} currentPage='transactions'/>
-        <h2>Create Batch</h2>
+        <h2>Create Transaction</h2>
         <BlockForm user_type={this.props.user_type} token={this.props.token} onComplete={this.props.sendTransaction}/>
       </div>
     );
