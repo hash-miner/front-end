@@ -6,6 +6,7 @@ import BlockChainView from './view';
 import Inventory from './inventory';
 import Landing from './landing';
 import Transactions from './transactions';
+import Home from './home';
 import { Provider } from 'react-redux';
 import createStore from '../lib/app-create-store';
 import {BrowserRouter, Route, Redirect} from 'react-router-dom';
@@ -29,10 +30,13 @@ export default class App extends React.Component {
       },
       appBar: {
         height: '50px',
-        backgroundColor: '#174266',
+        backgroundColor: '#000',
       },
       title: {
-        color: '#fff',
+        color: '#888',
+        textAlign: 'center',
+        textSize: '2px;',
+        
       },
 
     };
@@ -55,7 +59,9 @@ export default class App extends React.Component {
       <MuiThemeProvider muiTheme={muiTheme}>
         <main className='application-main'>
           <AppBar
-            title='Hash Miners'
+          // style={{height: '130px', marginBottom: '0px', backgroundColor: '#174266'}} 
+          // showMenuIconButton={false}/>
+            title='Meet Hash Miner. A decentralized distribution tracking chain'
             titleStyle={styles.title}
             style={styles.appBar}/>
           <Provider store={store}>
@@ -64,7 +70,8 @@ export default class App extends React.Component {
                 <Route exact path='/' component={() => 
                   token
                     ? <Redirect to='/transactions'/>
-                    : <Redirect to='/registration/signup'/>
+                    // : <Redirect to='/registration/signup'/>
+                    : <Home />
                 }/>
                 <Route exact path='/registration/:auth' component={Landing}/>
                 <Route exact path='/view/:type' component={BlockChainView}/>

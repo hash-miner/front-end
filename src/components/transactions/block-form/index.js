@@ -8,7 +8,7 @@ export default class AuthForm extends React.Component {
         batchWeight: 0, // Numeric Input
         batchId:'', // String (Text) Input
         location: '',
-        distributorId:'', // String (Text) Input
+        toAddress:'', // String (Text) Input
         user_type: this.props.user_type,
       }
       : this.props.user_type === 'Distributor' ? 
@@ -17,7 +17,7 @@ export default class AuthForm extends React.Component {
           itemWeight: 0, // Numeric Input
           quantity: 0, // Numeric Input
           packaging:'', // String (Text) Input
-          retailerId:'', // String (Text) Input
+          toAddress:'', // String (Text) Input
           user_type: this.props.user_type,
         }
         :
@@ -80,8 +80,8 @@ export default class AuthForm extends React.Component {
             <label htmlFor='weight'>kg</label>
             <input
               type='text'
-              name='distributorId'
-              value={this.state.distributorId}
+              name='toAddress'
+              value={this.state.toAddress}
               onChange={this.handleChange}
               placeholder={'Insert Distributor ID'}
             />
@@ -117,8 +117,8 @@ export default class AuthForm extends React.Component {
               />
               <input
                 type='text'
-                name='retailerId'
-                value={this.state.retailerId}
+                name='toAddress'
+                value={this.state.toAddress}
                 onChange={this.handleChange}
                 placeholder={'Insert Retailer ID'}
               />
