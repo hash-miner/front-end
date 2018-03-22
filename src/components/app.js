@@ -1,5 +1,7 @@
 import React from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import AppBar from 'material-ui/AppBar';
 import BlockChainView from './view';
 import Inventory from './inventory';
 import Landing from './landing';
@@ -18,30 +20,65 @@ export default class App extends React.Component {
   }
 
   render() {
+    const styles = {
+      root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around',
+        fontFamily: 'Roboto, sans-serif',
+      },
+      appBar: {
+        height: '50px',
+        backgroundColor: '#174266',
+      },
+      title: {
+        color: '#fff',
+      },
+
+    };
+    const muiTheme = getMuiTheme({
+      inputs: {
+        padding: '1px',
+        color: '#DDDDDD',
+        margin: '0 auto',
+        marginTop: '10px',
+        marginRight: '30px',
+        borderRadius: '8px',
+        fontColor: '#E7E7E7',
+        backgroundColor: 'white',
+        fontFamily: 'Roboto, sans-serif',
+      },
+    });
     let {token, user_type} = store.getState();
     console.log(store.getState());
     return (
-      <main className='application-main'>
-        <Provider store={store}>
-          <BrowserRouter>
-            <React.Fragment>
-              <Route exact path='/' component={() => 
-                token
-                  ? <Redirect to='/transactions'/>
-                  : <Redirect to='/registration/signup'/>
-              }/>
-              <Route exact path='/registration/:auth' component={Landing}/>
-              <Route exact path='/view/:type' component={BlockChainView}/>
-              <Route exact path='/transactions' component={()=>
-                token
-                  ? <Transactions token={token} user_type={user_type}/>
-                  : <Redirect to='/registration/signup'/> 
-              } />
-              <Route exact path='/inventory' component={Inventory} />
-            </React.Fragment>
-          </BrowserRouter>
-        </Provider>
-      </main>
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <main className='application-main'>
+          <AppBar
+            title='Hash Miners'
+            titleStyle={styles.title}
+            style={styles.appBar}/>
+          <Provider store={store}>
+            <BrowserRouter>
+              <React.Fragment>
+                <Route exact path='/' component={() => 
+                  token
+                    ? <Redirect to='/transactions'/>
+                    : <Redirect to='/registration/signup'/>
+                }/>
+                <Route exact path='/registration/:auth' component={Landing}/>
+                <Route exact path='/view/:type' component={BlockChainView}/>
+                <Route exact path='/transactions' component={()=>
+                  token
+                    ? <Transactions token={token} user_type={user_type}/>
+                    : <Redirect to='/registration/signup'/> 
+                } />
+                <Route exact path='/inventory' component={Inventory} />
+              </React.Fragment>
+            </BrowserRouter>
+          </Provider>
+        </main>
+      </MuiThemeProvider>
     );
   }
 }
