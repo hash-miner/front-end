@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import NavBar from '../navbar';
 import { inventoryGetRequest } from '../../action/inventory-actions';
 
+
 class Inventory extends React.Component {
   constructor(props) {
     super(props);
@@ -80,12 +81,17 @@ class Inventory extends React.Component {
           <button type='submit'>Search</button>
         </form>
         <div className='inventory-list-container'>
-          <ul>
-            {this.props.inventory.map(v => {
-              console.log(v);
-            // <li key={v._id}>{}</li>;
+            {this.props.inventory.map((v,i) => {
+              console.log(v)
+              return(
+                
+            <ul>
+                <li key={`${v._id}+${i}`}>{v.growerId}</li>
+                <li key={`${v._id}+${i}`}>{v.currentLocation}</li>
+                <li key={`${v._id}+${i}`}>{v.blockNumber}</li>
+            </ul> 
+              )
             })}
-          </ul> 
         </div>
       </div>
     );

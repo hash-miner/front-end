@@ -5,7 +5,7 @@ export default class AuthForm extends React.Component {
     super(props);
     this.defaultState = this.props.user_type === 'Grower' ? 
       {
-        weight: 0, // Numeric Input
+        batchWeight: 0, // Numeric Input
         batchId:'', // String (Text) Input
         location: '',
         distributorId:'', // String (Text) Input
@@ -73,8 +73,8 @@ export default class AuthForm extends React.Component {
             />
             <input
               type='number'
-              name='weight'
-              value={this.state.weight}
+              name='batchWeight'
+              value={this.state.batchWeight}
               onChange={this.handleChange}
             />
             <label htmlFor='weight'>kg</label>

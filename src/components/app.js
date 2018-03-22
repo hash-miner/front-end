@@ -1,4 +1,5 @@
 import React from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import BlockChainView from './view';
 import Inventory from './inventory';
 import Landing from './landing';
