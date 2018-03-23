@@ -6,8 +6,6 @@ export default class NavBar extends React.Component {
     return(
       <nav>
         <ul className='nav-list'>
-          {/* {this.props.currentPage !== 'pretty-view'? <li><Link to='/view/formatted'>Formatted View</Link></li> : undefined}
-          {this.props.currentPage !== 'raw-view'? <li><Link to='/view/unformatted'>Unformatted View</Link></li> : undefined} */}
           {this.props.currentPage !== 'home'? <li><Link to='/' refresh='true'>Home</Link></li> : undefined}
           {this.props.currentPage !== 'transactions'? <li><Link to='/transactions' refresh='true'>Create Transactions</Link></li> : undefined}
           {this.props.currentPage !== 'inventory' ? <li><Link to='/inventory' refresh='true'>Search Inventory</Link></li> : undefined}
