@@ -9,8 +9,8 @@ export default class NavBar extends React.Component {
           {this.props.currentPage !== 'home'? <li><Link to='/' refresh='true'>Home</Link></li> : undefined}
           {this.props.currentPage !== 'transactions'? <li><Link to='/transactions' refresh='true'>Create Transactions</Link></li> : undefined}
           {this.props.currentPage !== 'inventory' ? <li><Link to='/inventory' refresh='true'>Search Inventory</Link></li> : undefined}
-          {this.props.currentPage !== 'signup' && !this.props.token ? <li className='float-right'><Link to='/registration/signup' refresh='true'>Signup</Link></li> : undefined}
-          {this.props.currentPage !== 'signin' && !this.props.token ? <li className='float-right'><Link to='/registration/signin' refresh='true'>Login</Link></li> : undefined}
+          {this.props.currentPage !== 'signup' && !this.props.token ? <li className='float-right'><Link to='/registration/signup' refresh='true'>Sign up</Link></li> : undefined}
+          {this.props.currentPage !== 'signin' && !this.props.token ? <li className='float-right'><Link to='/registration/signin' refresh='true'>Sign in</Link></li> : undefined}
           {this.props.token ? <li><Link to='/registration/signin' onClick={() => {
             delete localStorage.token;
             delete localStorage.user_type;

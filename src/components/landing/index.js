@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import NavBar from '../navbar';
 import AuthForm from './auth-form';
 import {signupRequest, signinRequest} from '../../action/auth-actions';
+import Logo from '../../styles/assets/logo3.gif';
 
 class Landing extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class Landing extends React.Component {
     return(
       <div className='landing-container'>
         <NavBar token={this.props.token} currentPage={params.auth}/>
+        <p><img className='center logosize' src={Logo}/></p>
         <AuthForm
           history={this.props.history}
           auth={params.auth}
