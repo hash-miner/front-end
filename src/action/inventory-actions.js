@@ -11,6 +11,7 @@ export const inventoryGetRequest = (state) => dispatch => {
   return superagent.get(`${__NODE_URL__}/inventory/${param}`)
     .then(res => {
       dispatch(setInventory(res.body));
+      console.log(res.body)
     });
 };
 

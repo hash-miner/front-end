@@ -11,7 +11,7 @@ class SearchResults extends React.Component {
     this.state = {
       dataSet: null,
     };
-    this.handelGrowerSort = this.handelGrowerSort.bind(this);
+    this.handelBatchSort = this.handelBatchSort.bind(this);
     this.handelLocationSort = this.handelLocationSort.bind(this);
     this.handelBlockSort = this.handelBlockSort.bind(this);
   }
@@ -26,9 +26,9 @@ class SearchResults extends React.Component {
     this.setState({ dataSet: blockSort });
   }
 
-  handelGrowerSort(transactions) {
-    const growerSort = this.props.transactions.sort((a, b) => a.growerId - b.growerId);
-    this.setState({ dataSet: growerSort });
+  handelBatchSort(transactions) {
+    const batchSort = this.props.transactions.sort((a, b) => a.batchId - b.batchId);
+    this.setState({ dataSet: batchSort });
   }
 
   render() {
@@ -54,20 +54,24 @@ class SearchResults extends React.Component {
         <div className='sorting-buttons'>
           <h2>
             <span> Sort By </span>
-            <RaisedButton
-              label='Grower'
-              style={{ display: 'inline-block', marginLeft: '20px' }}
-              onClick={() => this.handelGrowerSort(this.state.dataSet)}
-            />
-            <RaisedButton
-              label='Location'
-              style={{ display: 'inline-block', marginLeft: '20px', marginRight: '10px' }}
-              onClick={() => this.handelLocationSort(this.state.dataSet)}
-            />
+            
+            
             <RaisedButton
               label='Block'
               style={{ display: 'inline-block', marginLeft: '10px' }}
               onClick={() => this.handelBlockSort(this.state.dataSet)}
+            />
+
+            <RaisedButton
+              label='Batch'
+              style={{ display: 'inline-block', marginLeft: '20px' }}
+              onClick={() => this.handelBatchSort(this.state.dataSet)}
+            />
+
+            <RaisedButton
+              label='Location'
+              style={{ display: 'inline-block', marginLeft: '20px', marginRight: '10px' }}
+              onClick={() => this.handelLocationSort(this.state.dataSet)}
             />
 
           </h2>
@@ -89,10 +93,10 @@ class SearchResults extends React.Component {
                 <div className='transaction-content'>
                   <ul className='search-ul' style={{ listStyle: 'none', display: 'inline-block' }}>
                     <li>Block: {transaction.blockNumber}</li>
-                    <li>Batch: {transaction.batchWeight}</li>
-                    <li>Grower ID: {transaction.growerId}</li>
+                    <li>Batch ID: {transaction.batchId}</li>
                     <li>Location: {transaction.currentLocation}</li>
-                    <li>Time stamp: {transaction.timestamp}</li>
+                    <li>Do not sell: {transaction.regulatorWarnings}</li>
+                    <li>TS: {transaction.lastUpdated}</li>
                   </ul>
                 </div>
               </GridTile>

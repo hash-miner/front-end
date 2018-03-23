@@ -1,4 +1,8 @@
 import React from 'react';
+import TextField from 'material-ui/TextField';
+import {Card, CardHeader} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
+import {Col, Form, FormGroup} from 'react-bootstrap';
 
 export default class AuthForm extends React.Component {
   constructor(props) {
@@ -36,58 +40,163 @@ export default class AuthForm extends React.Component {
   }
 
   render(){
+    const style = {
+      button: {
+        marginLeft: '40%',
+        marginTop: '20px',
+      },
+      textField: {
+        marginTop: '10px',
+        marginLeft: '30%',
+        display: 'inline-block',
+        underlineStyle: {
+          borderColor: '#174266',
+        },
+        underlineFocusStyle: {
+          borderColor: '#174266',
+        },
+        floatingLabelStyle: {
+          color: '#174266',
+        },
+        floatingLabelFocusStyle: {
+          color: '#174266',
+        },
+      },
+      card: {
+        margin: '0 auto',
+        header: {
+          marginLeft: '15px',
+        },
+        height: '440px',
+        width: '50%',
+      },
+    };
+
     return(
-      <form id='auth-form' onSubmit={this.handleSubmit}>
-        <input 
-          type='text'
-          name='username'
-          value={this.state.username}
-          onChange={this.handleChange}
-          placeholder='Username'/>
-        <input 
-          type='text'
-          name='password'
-          value={this.state.password}
-          onChange={this.handleChange}
-          placeholder='Password'/>
-        { this.props.auth === 'signup'? <div id='custom-type-select'>
-          <p onClick={this.handleSelect}>{this.state.user_type}</p>
-          <ul id='custom-type-options' onClick={this.handleOption}>
-            <li>Grower</li>
-            <li>Distributor</li>
-            <li>Retailer</li>
-          </ul>
-        </div> : undefined }
-        { this.props.auth === 'signup'?
-          (!this.state.user_type? undefined
-            : this.state.user_type === 'Grower' ? 
-              <input
-                type='text'
-                name='user_type_id'
-                value={this.state.user_type_id}
-                onChange={this.handleChange}
-                placeholder={`Insert ${this.state.user_type} ID`}
-              />
-              : this.state.user_type === 'Distributor' ?
-                <input
-                  type='text'
-                  name='user_type_id'
-                  value={this.state.user_type_id}
-                  onChange={this.handleChange}
-                  placeholder={`Insert ${this.state.user_type} ID`}
-                />
-                : this.state.user_type === 'Retailer' ? 
-                  <input
-                    type='text'
-                    name='user_type_id'
+      <Card
+        style={style.card}
+      >
+        <Form
+          horizontal
+          className='auth-form'
+          onSubmit={this.handleSubmit}>
+          <Col sm={4}>
+            <TextField
+              style={style.textField}
+              value={this.state.username}
+              floatingLabelText='User Name'
+              floatingLabelFixed={true}
+              hintText='enter User Name'
+              name='username'
+              onChange={this.handleChange}
+              inputStyle={{display: 'inline-block'}}
+              underlineStyle={style.textField.underlineStyle}
+              floatingLabelStyle={style.textField.floatingLabelStyle}
+              underlineFocusStyle={style.textField.underlineFocusStyle}
+              floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+
+            />
+          </Col>
+
+          <Col sm={4}>
+            <TextField
+              value={this.state.password}
+              floatingLabelText='Password'
+              hintText='enter Password'
+              style={style.textField}
+              floatingLabelFixed={true}
+              type='password'
+              name='password'
+              onChange={this.handleChange}
+              inputStyle={{display: 'inline-block'}}
+              underlineStyle={style.textField.underlineStyle}
+              underlineFocusStyle={style.textField.underlineFocusStyle}
+              floatingLabelStyle={style.textField.floatingLabelStyle}
+              floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+            />
+          </Col>
+
+          { this.props.auth === 'signup'? <div id='custom-type-select'>
+            <p onClick={this.handleSelect}>{this.state.user_type}</p>
+            <ul id='custom-type-options' onClick={this.handleOption}>
+              <li>Grower</li>
+              <li>Distributor</li>
+              <li>Retailer</li>
+              <li>Regulator</li>
+            </ul>
+          </div> : undefined }
+          { this.props.auth === 'signup'?
+            (!this.state.user_type? undefined
+              : this.state.user_type === 'Grower' ? 
+
+                <Col sm={4}>
+                  <TextField
                     value={this.state.user_type_id}
+                    floatingLabelText='Grower'
+                    hintText='enter Grower ID'
+                    style={style.textField}
+                    floatingLabelFixed={true}
+                    name='user_type_id'
                     onChange={this.handleChange}
-                    placeholder={`Insert ${this.state.user_type} ID`}
+                    inputStyle={{display: 'inline-block'}}
+                    underlineStyle={style.textField.underlineStyle}
+                    underlineFocusStyle={style.textField.underlineFocusStyle}
+                    floatingLabelStyle={style.textField.floatingLabelStyle}
+                    floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
                   />
-                  : undefined) : undefined
-        }
-        <button type='submit'>{this.props.auth}</button>
-      </form>
+                </Col>
+
+                : this.state.user_type === 'Distributor' ?
+
+                  <Col sm={4}>
+                    <TextField
+                      value={this.state.user_type_id}
+                      floatingLabelText='Distributor'
+                      hintText='enter Distributor ID'
+                      style={style.textField}
+                      floatingLabelFixed={true}
+                      name='user_type_id'
+                      onChange={this.handleChange}
+                      inputStyle={{display: 'inline-block'}}
+                      underlineStyle={style.textField.underlineStyle}
+                      underlineFocusStyle={style.textField.underlineFocusStyle}
+                      floatingLabelStyle={style.textField.floatingLabelStyle}
+                      floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+                    />
+                  </Col>
+
+                  : this.state.user_type === 'Retailer' ? 
+
+                    <Col sm={4}>
+                      <TextField
+                        value={this.state.user_type_id}
+                        floatingLabelText='Retailer ID'
+                        hintText='enter Retailer ID'
+                        style={style.textField}
+                        floatingLabelFixed={true}
+                        name='user_type_id'
+                        onChange={this.handleChange}
+                        inputStyle={{display: 'inline-block'}}
+                        underlineStyle={style.textField.underlineStyle}
+                        underlineFocusStyle={style.textField.underlineFocusStyle}
+                        floatingLabelStyle={style.textField.floatingLabelStyle}
+                        floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+                      />
+                    </Col>
+
+                    : undefined) : undefined
+          }
+          <FormGroup>
+            <RaisedButton 
+              type='submit' 
+              label={this.props.auth}
+              labelColor='#f2f2f2'
+              backgroundColor='#476c21'
+              style={style.button}
+            /> 
+          </FormGroup>
+        </Form>
+      </Card>
     );
   }
 }
