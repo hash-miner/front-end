@@ -15,12 +15,10 @@ export default class Home extends React.Component {
     return(
       <div>
         <div className='h1'>
+          <NavBar token={this.props.token} currentPage='home' />
           <p className='h1headinga'>Meet Hash Miner</p>
           <p className='headinghome h1headingb'>A decentralized distribution tracking chain</p>
-          
-          <a href="http://localhost:8080/registration/signin">
-            <img className='center logosize' src={Logo}/>
-          </a>
+          <img className='center logosize' src={Logo}/>
           <p className='headinghome'>Blockchain technology can quickly track a product's progress from farm to retail store</p>
           <p className='headinghome'>Blockchain technology enables a new era of end-to-end transparency in the global retail system</p>
           <p className='headinghome'>It allows all participants to share information rapidly and with confidence across a strong trusted network</p>

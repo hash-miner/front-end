@@ -111,3 +111,39 @@
   margin-bottom: 100px;
   margin-left: 150px;
 }
+
+.sorting-buttons {
+  margin-top: 30px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.float-right {
+  float: right;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: rgb(75, 187, 206);
+}
+
+#custom-type-options {
+  background-color: #fff;
+}

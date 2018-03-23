@@ -55,12 +55,12 @@ export default class App extends React.Component {
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
         <main className='application-main'>
-          <AppBar
-          // style={{height: '130px', marginBottom: '0px', backgroundColor: '#174266'}} 
-          // showMenuIconButton={false}/>
+          {/* <AppBar
+          style={{height: '130px', marginBottom: '0px', backgroundColor: '#174266'}} 
+          showMenuIconButton={false}/>
             title='Hash Miner'
             titleStyle={styles.title}
-            style={styles.appBar}/>
+            style={styles.appBar}/> */}
           <Provider store={store}>
             <BrowserRouter>
               <React.Fragment>

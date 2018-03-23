@@ -73,8 +73,7 @@ class Inventory extends React.Component {
       <div>
         <NavBar token={this.props.token} currentPage='inventory' />
         <p><img className='center logosize' src={Logo}/></p>
-        <h1 
-          style={{fontFamily: 'Pontano Sans, sans-serif', fontSize: '20px', textAlign: 'center'}}>
+        <h1 style={{fontFamily: 'Pontano Sans, sans-serif', fontSize: '20px', textAlign: 'center', marginBottom: '10px'}}>
           Search Inventory</h1>
         <Card
           style={style.card}
