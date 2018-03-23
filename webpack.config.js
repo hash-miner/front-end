@@ -20,9 +20,9 @@ let plugins = [
   }),
 ];
 
-// if (production) {
-//   plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
-// }
+if (production) {
+  plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
+}
 
 module.exports = {
   plugins,
@@ -34,7 +34,7 @@ module.exports = {
   output: {
     path: `${__dirname}/build`,
     filename: 'bundle-[hash].js',
-    publicPath: process.env.CDN_URL,
+    publicPath: '/',
   },
   module: {
     rules: [
