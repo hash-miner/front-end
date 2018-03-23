@@ -41,18 +41,18 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loaders: 'babel-loader',
       },
       {
         test: /\.scss$/,
-        loader: ExtractPlugin.extract(['css-loader', 'sass-loader']),
+        loaders: ExtractPlugin.extract(['css-loader', 'sass-loader']),
       },
       {
         test: /\.(jpg|jpeg|gif|png|tiff|svg)$/,
         exclude: /\.glyph.svg/,
         use: [
           {
-            loader: 'url-loader',
+            loaders: 'url-loader',
             options: {
               limit: 6000,
               name: 'image/[name].[ext]',
