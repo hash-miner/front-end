@@ -17,7 +17,7 @@ export default class Home extends React.Component {
         <div className='h1'>
           <NavBar token={this.props.token} currentPage='home' />
           <p className='h1headinga'>Meet Hash Miner</p>
-          <p className='headinghome h1headingb'>A decentralized distribution tracking chain</p>
+          <p className='h1headingb'>A decentralized distribution tracking chain</p>
           <img className='center logosize' src={Logo}/>
           <p className='headinghome'>Blockchain technology can quickly track a product's progress from farm to retail store</p>
           <p className='headinghome'>Blockchain technology enables a new era of end-to-end transparency in the global retail system</p>

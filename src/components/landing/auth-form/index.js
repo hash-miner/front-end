@@ -36,7 +36,9 @@ export default class AuthForm extends React.Component {
 
   handleOption (e) {
     document.getElementById('custom-type-options').style.visibility = 'none';
-    this.setState({user_type: e.target.innerText});
+    let temp = e.target.innerText.toLowerCase().split('');
+    temp[0] = temp[0].toUpperCase();
+    this.setState({user_type: temp.join('')});
   }
 
   render(){
@@ -68,7 +70,7 @@ export default class AuthForm extends React.Component {
           marginLeft: '15px',
         },
         height: '440px',
-        width: '50%',
+        width: '60%',
       },
     };
 
@@ -76,6 +78,102 @@ export default class AuthForm extends React.Component {
       <Card
         style={style.card}
       >
+
+
+      { this.props.auth === 'signup'? <div id='custom-type-select'>
+      <ul id='custom-type-options' onClick={this.handleOption}>
+        <li>
+          <RaisedButton 
+            label='Grower'
+            labelColor='#f2f2f2'
+            backgroundColor='rgb(75, 187, 206)'
+            style={style.button}
+          /> 
+        </li>
+        <li>
+          <RaisedButton 
+            label='Distributor'
+            labelColor='#f2f2f2'
+            backgroundColor='rgb(75, 187, 206)'
+            style={style.button}
+          /> 
+        </li>
+        <li><RaisedButton 
+          label='Retailer'
+          labelColor='#f2f2f2'
+          backgroundColor='rgb(75, 187, 206)'
+          style={style.button}
+        /> </li>
+        <li><RaisedButton 
+          label='Regulator'
+          labelColor='#f2f2f2'
+          backgroundColor='rgb(75, 187, 206)'
+          style={style.button}
+        /> </li>
+      </ul>
+    </div> : undefined }
+    { this.props.auth === 'signup'?
+      (!this.state.user_type? undefined
+        : this.state.user_type === 'Grower' ? 
+
+          <Col sm={4}>
+            <TextField
+              value={this.state.user_type_id}
+              floatingLabelText='Grower'
+              hintText='enter Grower ID'
+              style={style.textField}
+              floatingLabelFixed={true}
+              name='user_type_id'
+              onChange={this.handleChange}
+              inputStyle={{display: 'inline-block'}}
+              underlineStyle={style.textField.underlineStyle}
+              underlineFocusStyle={style.textField.underlineFocusStyle}
+              floatingLabelStyle={style.textField.floatingLabelStyle}
+              floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+            />
+          </Col>
+
+          : this.state.user_type === 'Distributor' ?
+
+            <Col sm={4}>
+              <TextField
+                value={this.state.user_type_id}
+                floatingLabelText='Distributor'
+                hintText='enter Distributor ID'
+                style={style.textField}
+                floatingLabelFixed={true}
+                name='user_type_id'
+                onChange={this.handleChange}
+                inputStyle={{display: 'inline-block'}}
+                underlineStyle={style.textField.underlineStyle}
+                underlineFocusStyle={style.textField.underlineFocusStyle}
+                floatingLabelStyle={style.textField.floatingLabelStyle}
+                floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+              />
+            </Col>
+
+            : this.state.user_type === 'Retailer' ? 
+
+              <Col sm={4}>
+                <TextField
+                  value={this.state.user_type_id}
+                  floatingLabelText='Retailer ID'
+                  hintText='enter Retailer ID'
+                  style={style.textField}
+                  floatingLabelFixed={true}
+                  name='user_type_id'
+                  onChange={this.handleChange}
+                  inputStyle={{display: 'inline-block'}}
+                  underlineStyle={style.textField.underlineStyle}
+                  underlineFocusStyle={style.textField.underlineFocusStyle}
+                  floatingLabelStyle={style.textField.floatingLabelStyle}
+                  floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+                />
+              </Col>
+
+              : undefined) : undefined
+    }
+
         <Form
           horizontal
           className='auth-form'
@@ -116,76 +214,7 @@ export default class AuthForm extends React.Component {
             />
           </Col>
 
-          { this.props.auth === 'signup'? <div id='custom-type-select'>
-            <p onClick={this.handleSelect}>{this.state.user_type}</p>
-            <ul id='custom-type-options' onClick={this.handleOption}>
-              <li>Grower</li>
-              <li>Distributor</li>
-              <li>Retailer</li>
-              <li>Regulator</li>
-            </ul>
-          </div> : undefined }
-          { this.props.auth === 'signup'?
-            (!this.state.user_type? undefined
-              : this.state.user_type === 'Grower' ? 
-
-                <Col sm={4}>
-                  <TextField
-                    value={this.state.user_type_id}
-                    floatingLabelText='Grower'
-                    hintText='enter Grower ID'
-                    style={style.textField}
-                    floatingLabelFixed={true}
-                    name='user_type_id'
-                    onChange={this.handleChange}
-                    inputStyle={{display: 'inline-block'}}
-                    underlineStyle={style.textField.underlineStyle}
-                    underlineFocusStyle={style.textField.underlineFocusStyle}
-                    floatingLabelStyle={style.textField.floatingLabelStyle}
-                    floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
-                  />
-                </Col>
-
-                : this.state.user_type === 'Distributor' ?
-
-                  <Col sm={4}>
-                    <TextField
-                      value={this.state.user_type_id}
-                      floatingLabelText='Distributor'
-                      hintText='enter Distributor ID'
-                      style={style.textField}
-                      floatingLabelFixed={true}
-                      name='user_type_id'
-                      onChange={this.handleChange}
-                      inputStyle={{display: 'inline-block'}}
-                      underlineStyle={style.textField.underlineStyle}
-                      underlineFocusStyle={style.textField.underlineFocusStyle}
-                      floatingLabelStyle={style.textField.floatingLabelStyle}
-                      floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
-                    />
-                  </Col>
-
-                  : this.state.user_type === 'Retailer' ? 
-
-                    <Col sm={4}>
-                      <TextField
-                        value={this.state.user_type_id}
-                        floatingLabelText='Retailer ID'
-                        hintText='enter Retailer ID'
-                        style={style.textField}
-                        floatingLabelFixed={true}
-                        name='user_type_id'
-                        onChange={this.handleChange}
-                        inputStyle={{display: 'inline-block'}}
-                        underlineStyle={style.textField.underlineStyle}
-                        underlineFocusStyle={style.textField.underlineFocusStyle}
-                        floatingLabelStyle={style.textField.floatingLabelStyle}
-                        floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
-                      />
-                    </Col>
-
-                    : undefined) : undefined
-          }
+          
           <FormGroup>
             <RaisedButton 
               type='submit' 
