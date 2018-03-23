@@ -24,8 +24,6 @@ if (production) {
   plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
 }
 
-console.log(__dirname);
-
 module.exports = {
   plugins,
   entry: `${__dirname}/src/main.js`,
@@ -35,7 +33,7 @@ module.exports = {
   devtool: production ? undefined : 'source-maps',
   output: {
     path: `${__dirname}/build`,
-    filename: 'bundle.js',
+    filename: 'bundle-[hash].js',
     publicPath: process.env.CDN_URL,
   },
   module: {
