@@ -20,9 +20,9 @@ let plugins = [
   }),
 ];
 
-if (production) {
-  plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
-}
+// if (production) {
+//   plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
+// }
 
 module.exports = {
   plugins,
