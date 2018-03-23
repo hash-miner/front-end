@@ -7,6 +7,7 @@ import TextField from 'material-ui/TextField';
 import {Card, CardHeader} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Col, Form, FormGroup} from 'react-bootstrap';
+import Logo from '../../styles/assets/logo3.gif';
 
 class Inventory extends React.Component {
   constructor(props) {
@@ -71,6 +72,7 @@ class Inventory extends React.Component {
     return(
       <div>
         <NavBar token={this.props.token} currentPage='inventory' />
+        <p><img className='center logosize' src={Logo}/></p>
         <h1 
           style={{fontFamily: 'Pontano Sans, sans-serif', fontSize: '20px', textAlign: 'center'}}>
           Search Inventory</h1>

@@ -17,7 +17,6 @@ export default class App extends React.Component {
   componentWillMount() {
     if (localStorage.token) store.dispatch({ type: 'TOKEN_SET', payload: localStorage.token });
     if (localStorage.user_type) store.dispatch({ type: 'USER_TYPE_SET', payload: localStorage.user_type });
-
   }
 
   render() {
@@ -35,8 +34,6 @@ export default class App extends React.Component {
       title: {
         color: '#888',
         textAlign: 'center',
-        // textSize: '2px;',
-        
       },
 
     };

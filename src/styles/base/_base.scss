@@ -6,12 +6,8 @@
   height: 900px;
 }
 
-.h2 {
-  background-image: url("../assets/data-flow.png");
-  background-repeat: repeat-y;
-  background-position: center;
-  background-size: cover;
-  height: 800px;
+.h3 {
+  background-color: black;
 }
 
 .h1headinga {
@@ -37,12 +33,7 @@
 }
 
 .logosize {
-  
   width: 20em;
-}
-
-.dataflow {
-  background-image: linear-gradient(rgba(lightblue, 0.4), rgba(plum, 0.4)),
 }
 
 .infoheading {
@@ -51,6 +42,7 @@
   font-size: 50px;
   background-color: #fff;
   color: rgb(75, 187, 206);
+  background-color: #555;
 }
 
 .infoimg {
@@ -62,7 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
+  background-color: #555;
 }
 
 .boximg {
@@ -79,86 +71,43 @@
   margin-bottom: 100px;
 }
 
-.aboutus {
-  height: 400px;
+.aboutheading {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 50px;
+  background-color: #fff;
+  color: rgb(75, 187, 206);
+  background-color: #333;
+}
+
+.boxabout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #333;
 }
 
 .teamimg {
   margin-top: 60px;
-  padding: 60px;
+  padding: 70px;
   width: 10em;
-  margin-left: 60px;
+  margin-left: 40px;
+  
 }
 
-
-// ul {
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-//   overflow: hidden;
-//   color: #fff
-// }
-
-
-// body {
-//   height: 1000px;
-//   margin: 20px 60px 60px 60px;
-//   font-size: 18px;
-//   background-image: url("../assets/log1.jpg");
-//   background-repeat: repeat-y;
-//   background-position: center;
-//   background-size: cover;
-// }
-
-
-// ul {
-//   list-style-type: none;
-//   margin: 0;
-//   padding: 0;
-//   overflow: hidden;
-//   background-color: #266ba8;
-// }
-
-// li {
-//   float: left;
-// }
-
-// li a {
-//   display: block;
-//   color: white;
-//   text-align: center;
-//   padding: 14px 16px;
-//   text-decoration: none;
-// }
-
-// input {
-//   margin-left: 10px;
-// }
-
-// .float-right {
-//   float: right;
-// }
-
-// li a:hover {
-//   background-color: #888;
-// }
-
-// .active {
-//   background-color: #4CAF50;
-// }
-
-// label {
-//   padding: 10px;
-// }
-
-// button {
-//   background-color: #266ba8;
-//   color: #fff;
-//   padding: 5px 12px;
-//   text-align: center;
-//   text-decoration: none;
-//   font-size: 16px;
-//   border-radius: 12px;
-//   margin: 10px;
-// }
+.boxabouttext {
+  width: 250px;
+  height: 140px;
+  padding-right: 100px;
+  color: rgb(75, 187, 206);
+  margin-bottom: 100px;
+  margin-left: 60px;
+}
+.boxabouttext1 {
+  width: 250px;
+  height: 140px;
+  padding-right: 100px;
+  color: rgb(75, 187, 206);
+  margin-bottom: 100px;
+  margin-left: 150px;
+}
