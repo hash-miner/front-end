@@ -41,11 +41,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node-modules/,
-        loaders: 'babel-loader',
+        loader: 'babel-loader',
       },
       {
         test: /\.scss$/,
-        loaders: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
+        loader: ExtractTextPlugin.extract(['css-loader', 'sass-loader']),
       },
       {
         test: /\.(jpg|jpeg|gif|png|tif|tiff)$/,
