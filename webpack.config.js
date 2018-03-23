@@ -34,7 +34,7 @@ module.exports = {
   output: {
     path: `${__dirname}/build`,
     filename: 'bundle-[hash].js',
-    publicPath: '/',
+    publicPath: process.env.CDN_URL,
   },
   module: {
     rules: [
