@@ -24,6 +24,8 @@ if (production) {
   plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
 }
 
+console.log(__dirname);
+
 module.exports = {
   plugins,
   entry: `${__dirname}/src/main.js`,
