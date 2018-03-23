@@ -35,7 +35,7 @@ module.exports = {
   devtool: production ? undefined : 'source-maps',
   output: {
     path: `${__dirname}/build`,
-    filename: 'bundle-[hash].js',
+    filename: 'bundle.js',
     publicPath: process.env.CDN_URL,
   },
   module: {
