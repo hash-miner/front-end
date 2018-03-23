@@ -139,11 +139,22 @@ li a {
   float: right;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: rgb(75, 187, 206);
 }
 
 #custom-type-options {
   background-color: #fff;
+}
+
+.search-ul {
+  background-color: #aaa;
+}
+
+.application-main {
+  margin-bottom: 100px;
+}
+
+h2 {
+  margin-bottom: 10px;
 }
