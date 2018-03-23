@@ -1,7 +1,7 @@
 'use strict';
 
 const production = process.env.NODE_ENV === 'production';
-if(production) require('dotenv').config({ path: `${__dirname}/.dev.env` });
+if(!production) require('dotenv').config({ path: `${__dirname}/.dev.env` });
 
 const { DefinePlugin, EnvironmentPlugin } = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
@@ -30,7 +30,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
   },
-  devtool: 'source-maps',
+  devtool: production ? undefined : 'source-maps',
   output: {
     path: `${__dirname}/build`,
     filename: 'bundle-[hash].js',
@@ -39,42 +39,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
-        query:
-          {
-            presets: ['react'],
-          },
       },
       {
         test: /\.scss$/,
         loader: ExtractPlugin.extract(['css-loader', 'sass-loader']),
-      },
-      {
-        test: /\.(woff|woff2|ttf|eot|glyph|\.svg)$/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 10000,
-              name: 'font/[name].[ext]',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(jpg|jpeg|gif|png|tiff|svg)$/,
-        exclude: /\.glyph.svg/,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 6000,
-              name: 'image/[name].[ext]',
-            },
-          },
-        ],
       },
     ],
   },
