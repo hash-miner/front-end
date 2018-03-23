@@ -51,6 +51,8 @@ export default class App extends React.Component {
       },
     });
     let {token, user_type} = store.getState();
+    // let token = localStorage.token;
+    // let user_type = localStorage.user_type;
     console.log(store.getState());
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
@@ -64,12 +66,7 @@ export default class App extends React.Component {
           <Provider store={store}>
             <BrowserRouter>
               <React.Fragment>
-                <Route exact path='/' component={() => 
-                  token
-                    ? <Redirect to='/transactions'/>
-                    // : <Redirect to='/registration/signup'/>
-                    : <Home />
-                }/>
+                <Route exact path='/' component={() => <Home token={token}/>}/>
                 <Route exact path='/registration/:auth' component={Landing}/>
                 <Route exact path='/view/:type' component={BlockChainView}/>
                 <Route exact path='/transactions' component={()=>
