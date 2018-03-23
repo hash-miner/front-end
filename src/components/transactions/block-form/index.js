@@ -9,7 +9,7 @@ export default class AuthForm extends React.Component {
     super(props);
     this.defaultState = this.props.user_type === 'Grower' ? 
       {
-        batchWeight: 0, // Numeric Input
+        batchWeight: '', // Numeric Input
         batchId:'', // String (Text) Input
         location: '',
         toAddress:'', // String (Text) Input
@@ -18,8 +18,8 @@ export default class AuthForm extends React.Component {
       : this.props.user_type === 'Distributor' ? 
         {
           batchId: '', // Select Box
-          itemWeight: 0, // Numeric Input
-          quantity: 0, // Numeric Input
+          itemWeight: '', // Numeric Input
+          quantity: '', // Numeric Input
           packaging:'', // String (Text) Input
           toAddress:'', // String (Text) Input
           user_type: this.props.user_type,
@@ -56,7 +56,6 @@ export default class AuthForm extends React.Component {
   }
 
   render(){
-
     const style = {
       button: {
         marginLeft: '40%',
@@ -84,7 +83,7 @@ export default class AuthForm extends React.Component {
         header: {
           marginLeft: '15px',
         },
-        height: '390px',
+        height: '420px',
         width: '50%',
       },
     };
@@ -97,11 +96,8 @@ export default class AuthForm extends React.Component {
         <Form
           horizontal
           id='auth-form'
-
-      
           onSubmit={this.handleSubmit}>
           {
-
             user_type === 'Grower'? <React.Fragment>
               <Col sm={4}>
                 <TextField
@@ -160,8 +156,8 @@ export default class AuthForm extends React.Component {
                   value={this.state.toAddress}
                   floatingLabelText='To Address'
                   floatingLabelFixed={true}
-                  hintText='To address'
-                  name='batchWeight'
+                  hintText='insert To address'
+                  name='toAddress'
                   onChange={this.handleChange}
                   inputStyle={{display: 'inline-block'}}
                   underlineStyle={style.textField.underlineStyle}
@@ -171,22 +167,89 @@ export default class AuthForm extends React.Component {
                 />
               </Col>
 
-
             </React.Fragment> :
               user_type === 'Distributor'? <React.Fragment>
                 <Col sm={4}>
                   <TextField
-                    value={this.state.itemId}
-                    floatingLabelText='Item ID'
-                    hintText='insert Batch ID'
                     style={style.textField}
+                    value={this.state.batchId}
+                    floatingLabelText='Batch ID'
                     floatingLabelFixed={true}
-                    name='itemId'
+                    hintText='insert Batch ID'
+                    name='batchId'
                     onChange={this.handleChange}
                     inputStyle={{display: 'inline-block'}}
                     underlineStyle={style.textField.underlineStyle}
-                    underlineFocusStyle={style.textField.underlineFocusStyle}
                     floatingLabelStyle={style.textField.floatingLabelStyle}
+                    underlineFocusStyle={style.textField.underlineFocusStyle}
+                    floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+                  />
+                </Col>
+
+                <Col sm={4}>
+                  <TextField
+                    style={style.textField}
+                    value={this.state.itemWeight}
+                    floatingLabelText='Item weight'
+                    floatingLabelFixed={true}
+                    hintText='insert Item weight'
+                    name='itemWeight'
+                    onChange={this.handleChange}
+                    inputStyle={{display: 'inline-block'}}
+                    underlineStyle={style.textField.underlineStyle}
+                    floatingLabelStyle={style.textField.floatingLabelStyle}
+                    underlineFocusStyle={style.textField.underlineFocusStyle}
+                    floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+                  />
+                </Col>
+
+                <Col sm={4}>
+                  <TextField
+                    style={style.textField}
+                    value={this.state.quantity}
+                    floatingLabelText='Quantity'
+                    floatingLabelFixed={true}
+                    hintText='insert Quantity'
+                    name='quantity'
+                    onChange={this.handleChange}
+                    inputStyle={{display: 'inline-block'}}
+                    underlineStyle={style.textField.underlineStyle}
+                    floatingLabelStyle={style.textField.floatingLabelStyle}
+                    underlineFocusStyle={style.textField.underlineFocusStyle}
+                    floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+                  />
+                </Col>
+
+                <Col sm={4}>
+                  <TextField
+                    style={style.textField}
+                    value={this.state.packaging}
+                    floatingLabelText='Packaging'
+                    floatingLabelFixed={true}
+                    hintText='insert Packaging type'
+                    name='packaging'
+                    onChange={this.handleChange}
+                    inputStyle={{display: 'inline-block'}}
+                    underlineStyle={style.textField.underlineStyle}
+                    floatingLabelStyle={style.textField.floatingLabelStyle}
+                    underlineFocusStyle={style.textField.underlineFocusStyle}
+                    floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+                  />
+                </Col>
+
+                <Col sm={4}>
+                  <TextField
+                    style={style.textField}
+                    value={this.state.toAddress}
+                    floatingLabelText='To Address'
+                    floatingLabelFixed={true}
+                    hintText='insert To address'
+                    name='toAddress'
+                    onChange={this.handleChange}
+                    inputStyle={{display: 'inline-block'}}
+                    underlineStyle={style.textField.underlineStyle}
+                    floatingLabelStyle={style.textField.floatingLabelStyle}
+                    underlineFocusStyle={style.textField.underlineFocusStyle}
                     floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
                   />
                 </Col>
@@ -194,15 +257,14 @@ export default class AuthForm extends React.Component {
               </React.Fragment> 
                 :
                 <React.Fragment>
-
                   <Col sm={4}>
                     <TextField
-                      value={this.state.growerId}
-                      floatingLabelText='Grower ID'
-                      hintText='123..'
+                      value={this.state.itemId}
+                      floatingLabelText='Item ID'
+                      hintText='insert Item ID'
                       style={style.textField}
                       floatingLabelFixed={true}
-                      name='growerId'
+                      name='itemId'
                       onChange={this.handleChange}
                       inputStyle={{display: 'inline-block'}}
                       underlineStyle={style.textField.underlineStyle}
@@ -216,7 +278,7 @@ export default class AuthForm extends React.Component {
           <FormGroup>
             <RaisedButton 
               type='submit' 
-              label='CREATE' 
+              label={ user_type === 'Grower'? 'Create Batch' : user_type === 'Distributor'? 'Process Items' : 'Receive Item'}
               labelColor='#f2f2f2'
               backgroundColor='#476c21'
               style={style.button}
@@ -224,90 +286,6 @@ export default class AuthForm extends React.Component {
           </FormGroup>
         </Form>
       </Card>
-      
-      // <form id='auth-form' onSubmit={this.handleSubmit}>
-      //   {
-      //     user_type === 'Grower'? <React.Fragment>
-      //       <input
-      //         type='text'
-      //         name='batchId'
-      //         value={this.state.batchId}
-      //         onChange={this.handleChange}
-      //         placeholder={'ins batch id'}
-      //       />
-      //       <input
-      //         type='text'
-      //         name='location'
-      //         value={this.state.location}
-      //         onChange={this.handleChange}
-      //         placeholder={'ins location'}
-      //       />
-      //       <input
-      //         type='number'
-      //         name='batchWeight'
-      //         value={this.state.batchWeight}
-      //         onChange={this.handleChange}
-      //       />
-      //       <label htmlFor='weight'>kg</label>
-      //       <input
-      //         type='text'
-      //         name='toAddress'
-      //         value={this.state.toAddress}
-      //         onChange={this.handleChange}
-      //         placeholder={'Insert Distributor ID'}
-      //       />
-      //     </React.Fragment> :
-      //       user_type === 'Distributor'? <React.Fragment>
-      //         <input
-      //           type='text'
-      //           name='batchId'
-      //           value={this.state.batchId}
-      //           onChange={this.handleChange}
-      //           placeholder={'Insert Batch ID'}
-      //         />
-      //         <input
-      //           type='text'
-      //           name='itemWeight'
-      //           value={this.state.itemWeight}
-      //           onChange={this.handleChange}
-      //           placeholder={'Insert Item Weight'}
-      //         />
-      //         <input
-      //           type='text'
-      //           name='quantity'
-      //           value={this.state.quantity}
-      //           onChange={this.handleChange}
-      //           placeholder={'Insert Quantity'}
-      //         />
-      //         <input
-      //           type='text'
-      //           name='packaging'
-      //           value={this.state.packaging}
-      //           onChange={this.handleChange}
-      //           placeholder={'Insert Packaging'}
-      //         />
-      //         <input
-      //           type='text'
-      //           name='toAddress'
-      //           value={this.state.toAddress}
-      //           onChange={this.handleChange}
-      //           placeholder={'Insert Retailer ID'}
-      //         />
-      //       </React.Fragment> 
-      //         :
-      //         <React.Fragment>
-      //           <input
-      //             type='text'
-      //             name='itemId'
-      //             value={this.state.itemId}
-      //             onChange={this.handleChange}
-      //             placeholder={'Insert Item ID'}
-      //           />
-      //         </React.Fragment>
-
-      //   }
-      //   <button type='submit'>{ user_type === 'Grower'? 'Create Batch' : user_type === 'Distributor'? 'Process Items' : 'Receive Item'}</button>
-      // </form>
     );
   }
 }
