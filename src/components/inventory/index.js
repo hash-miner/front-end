@@ -64,7 +64,7 @@ class Inventory extends React.Component {
         header: {
           marginLeft: '15px',
         },
-        height: '390px',
+        height: '410px',
         width: '50%',
       },
     };
@@ -88,7 +88,7 @@ class Inventory extends React.Component {
                 value={this.state.batchId}
                 floatingLabelText='Batch ID'
                 floatingLabelFixed={true}
-                hintText='123..'
+                hintText='search by Batch ID'
                 name='batchId'
                 onChange={this.handleChange}
                 inputStyle={{display: 'inline-block'}}
@@ -104,7 +104,7 @@ class Inventory extends React.Component {
               <TextField
                 value={this.state.itemId}
                 floatingLabelText='Item ID'
-                hintText='123..'
+                hintText='search by Item ID'
                 style={style.textField}
                 floatingLabelFixed={true}
                 name='itemId'
@@ -121,10 +121,27 @@ class Inventory extends React.Component {
               <TextField
                 value={this.state.growerId}
                 floatingLabelText='Grower ID'
-                hintText='123..'
+                hintText='search by Grower ID'
                 style={style.textField}
                 floatingLabelFixed={true}
                 name='growerId'
+                onChange={this.handleChange}
+                inputStyle={{display: 'inline-block'}}
+                underlineStyle={style.textField.underlineStyle}
+                underlineFocusStyle={style.textField.underlineFocusStyle}
+                floatingLabelStyle={style.textField.floatingLabelStyle}
+                floatingLabelFocusStyle={style.textField.floatingLabelFocusStyle}
+              />
+            </Col>
+
+            <Col sm={4}>
+              <TextField
+                value={this.state.location}
+                floatingLabelText='Location'
+                hintText='search by Location'
+                style={style.textField}
+                floatingLabelFixed={true}
+                name='location'
                 onChange={this.handleChange}
                 inputStyle={{display: 'inline-block'}}
                 underlineStyle={style.textField.underlineStyle}

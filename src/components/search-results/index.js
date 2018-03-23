@@ -87,10 +87,12 @@ class SearchResults extends React.Component {
                 style={{ fontFamily: ', sans-serif' }}
               >
                 <div className='transaction-content'>
-                  <ul style={{ listStyle: 'none', display: 'inline-block' }}>
-                    <li>{transaction.growerId}</li>
-                    <li>{transaction.currentLocation}</li>
-                    <li>{transaction.blockNumber}</li>
+                  <ul className='search-ul' style={{ listStyle: 'none', display: 'inline-block' }}>
+                    <li>Block: {transaction.blockNumber}</li>
+                    <li>Batch: {transaction.batchWeight}</li>
+                    <li>Grower ID: {transaction.growerId}</li>
+                    <li>Location: {transaction.currentLocation}</li>
+                    <li>Time stamp: {transaction.timestamp}</li>
                   </ul>
                 </div>
               </GridTile>
