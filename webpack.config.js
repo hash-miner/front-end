@@ -24,8 +24,6 @@ if (production) {
   plugins = plugins.concat([new CleanPlugin(), new UglifyPlugin()]);
 }
 
-console.log(__dirname);
-
 module.exports = {
   plugins,
   entry: `${__dirname}/src/main.js`,
@@ -35,7 +33,7 @@ module.exports = {
   devtool: production ? undefined : 'source-maps',
   output: {
     path: `${__dirname}/build`,
-    filename: 'bundle.js',
+    filename: 'bundle-[hash].js',
     publicPath: process.env.CDN_URL,
   },
   module: {
@@ -43,18 +41,18 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loaders: 'babel-loader',
       },
       {
         test: /\.scss$/,
-        loader: ExtractPlugin.extract(['css-loader', 'sass-loader']),
+        loaders: ExtractPlugin.extract(['css-loader', 'sass-loader']),
       },
       {
         test: /\.(jpg|jpeg|gif|png|tiff|svg)$/,
         exclude: /\.glyph.svg/,
         use: [
           {
-            loader: 'url-loader',
+            loaders: 'url-loader',
             options: {
               limit: 6000,
               name: 'image/[name].[ext]',
