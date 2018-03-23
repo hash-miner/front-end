@@ -3,7 +3,7 @@
   background-repeat: repeat-y;
   background-position: center;
   background-size: cover;
-  height: 800px;
+  height: 900px;
 }
 
 .h2 {
@@ -12,8 +12,6 @@
   background-position: center;
   background-size: cover;
   height: 800px;
-  // background-image: linear-gradient(rgba(lightblue, 0.4), rgba(75, 187, 206, 0.1)),
-  // url("../assets/data-flow.png");
 }
 
 .h1headinga {
@@ -47,9 +45,43 @@
   background-image: linear-gradient(rgba(lightblue, 0.4), rgba(plum, 0.4)),
 }
 
+.infoheading {
+  padding-top: 100px;
+  text-align: center;
+  font-size: 50px;
+  background-color: #fff;
+  color: rgb(75, 187, 206);
+}
+
+.infoimg {
+  margin-top: 120px;
+  width: 15em;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.boximg {
+  width: 300px;
+  height: 330px;
+  padding-right: 100px;
+}
+
+.boxtext {
+  width: 300px;
+  height: 140px;
+  padding-right: 100px;
+  color: rgb(75, 187, 206);
+  margin-bottom: 100px;
+}
+
 .aboutus {
   height: 400px;
-  background-color: #aaa;
+  background-color: #333;
 }
 
 .teamimg {
@@ -58,6 +90,7 @@
   width: 10em;
   margin-left: 60px;
 }
+
 
 // ul {
 //   list-style-type: none;
@@ -128,26 +161,4 @@
 //   font-size: 16px;
 //   border-radius: 12px;
 //   margin: 10px;
-// }
-
-
-
-// .inventory-list-container{
-//   text-align: center;
-//   margin: 0 auto;
-//   ul {
-//     background-color: rgba($color: #aaa, $alpha: .08);
-//     padding: 0.2em;
-//     text-align: center;
-//     margin: auto;
-
-//     li {
-//       width: 29%;
-//       height: 1em;
-//       padding: 0.5em;
-//       border-style: solid;
-//       border-width: 1px;
-//       text-align: center;
-//     }
-//   }
 // }
