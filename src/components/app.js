@@ -79,9 +79,6 @@ export default class App extends React.Component {
             </BrowserRouter>
           </Provider>
         </main>
-        <footer>
-      <p>ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffjsbdfkjsdfkjbsdJKFBSjkdfjksdbFJKsbdfjkbsdjkFBSDJKbfkj</p>
-    </footer>
       </MuiThemeProvider>
       
     );
